@@ -9,5 +9,6 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="lib" path="C:/Java Leenhouwers/tomcat/apache-tomcat-8.0.28/lib/servlet-api.jar"/>
+	<classpathentry kind="lib" path="C:/Java Leenhouwers/Eclipse J2EE/workspace/Project_CRM_Leenhouwers/WebContent/WEB-INF/lib/jstl-api-1.2.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
