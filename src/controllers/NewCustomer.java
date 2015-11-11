@@ -26,10 +26,10 @@ public class NewCustomer {
 		model.addAttribute("customer", customer);
 		return "NewCustomerAdded";
 	}
-	
-	@RequestMapping(value="/NewCustomerAdded", method=RequestMethod.POST)
-	public String newCustomerAdded(){
-		return "redirect:MainMenu";
-	}
+//	
+//	@RequestMapping(value="/NewCustomerAdded", method=RequestMethod.POST)
+//	public String newCustomerAdded(){
+//		return "redirect:MainMenu";
+//	}
 	
 }

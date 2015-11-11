@@ -1,4 +1,4 @@
-package controllers;
+package model;
 
 import java.util.List;
 
@@ -6,8 +6,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
-
-import model.User;
 
 public class UserDoa {
 
@@ -44,11 +42,22 @@ public class UserDoa {
 		return user;
 	}
 	
+	public static User findUserByName(String name){
+		EntityManager em = emf.createEntityManager();
+		EntityTransaction t = em.getTransaction();
+		t.begin();
+		User user = em.createQuery("from User where name="+name, User.class).getSingleResult();
+		t.commit();
+		em.close();	
+		return user;
+	}
+	
+	
 	public static List<User> findAll() {
 		EntityManager em = emf.createEntityManager();
 		EntityTransaction t = em.getTransaction();
 		t.begin();
-		List<User> allUsers = em.createQuery("from user", User.class).getResultList();
+		List<User> allUsers = em.createQuery("from User", User.class).getResultList();
 		t.commit();
 		em.close();		
 		return allUsers;

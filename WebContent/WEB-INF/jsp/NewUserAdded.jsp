@@ -10,13 +10,7 @@
 </head>
 <body>
 	<h1>CRM</h1>
-	<h2>Customer has been added</h2>
-	<p><a href="<c:url value="/DisplayCustomer/${customer.id}"/>"> Display the customer</a></p>
+	<h2>User has been added</h2>
 	<p><a href="<c:url value="/MainMenu"/>">Return to main menu</a></p>
-
-<footer>
-  <p>Logged in as: ${user.name}</p>
-</footer>	
-	
 </body>
 </html>

@@ -49,7 +49,7 @@ public abstract class CustomerDoa {
 		EntityManager em = emf.createEntityManager();
 		EntityTransaction t = em.getTransaction();
 		t.begin();
-		List<Customer> allCustomers = em.createQuery("from customer", Customer.class).getResultList();
+		List<Customer> allCustomers = em.createQuery("from Customer", Customer.class).getResultList();
 		t.commit();
 		em.close();		
 		return allCustomers;

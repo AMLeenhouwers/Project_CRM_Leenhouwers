@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">		
@@ -11,7 +11,7 @@
 <body> 
 <H1>CRM</H1>
 <P>Welcome to the login page. Please enter your username</P>
-<form:form id="form" method="post" cssClass="cleanform" command="user">
+<form:form id="form" method="post" cssClass="cleanform" commandName="newUser">
 <TABLE>
 	<TBODY>
 		<TR>

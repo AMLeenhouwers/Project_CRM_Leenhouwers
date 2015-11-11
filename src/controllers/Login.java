@@ -34,9 +34,11 @@ public class Login {
 	
 	@RequestMapping(method=RequestMethod.POST)
 	public String processLogin(HttpServletResponse response, @ModelAttribute("user") User user){
+//	System.out.println(UserDoa.findUserByName(user.getName()));	
 		Cookie idCookie = new Cookie("idCookie", user.getName());
 		idCookie.setMaxAge(7*24*60*60);
-		response.addCookie(idCookie);		
+		response.addCookie(idCookie);	
+	//	if() return null;
 		return "redirect:MainMenu";
 	}
 }
