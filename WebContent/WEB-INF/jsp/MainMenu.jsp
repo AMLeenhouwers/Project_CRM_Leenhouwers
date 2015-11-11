@@ -14,19 +14,21 @@
 <H1>CRM</H1>
 
 <H2>Welcome ${user.name}</H2>
-	<form:form id="form" method="post" cssClass="cleanform">
+	<form:form id="form" method="post" cssClass="cleanform" action="/Project_CRM_Leenhouwers/MainMenu">
 	<table>
 		<TBODY>
 			<TR>
-				<TH align="center" width="25%"><INPUT type="submit" name="submit" value="Add new customer"></TH>
-				<TH align="center" width="20%"><INPUT type="submit" name="submit" value="Display customer"></TH>
-				<TH align="center" width="20%"><INPUT type="submit" name="submit" value="Remove"></TH>
+				<th align="center"><a href="<c:url value="/NewCustomer"/>">Add a new customer</a></th>
+				<th align="center"><a href="<c:url value="/SearchCustomer"/>">Search a customer</a></th>
+				<th align="center"><a href="<c:url value="/DeleteCustomer"/>">Search and delete a customer</a></th>
+				<th align="center"><a href="<c:url value="/DisplayCustomer"/>">Display a customer</a></th>
+				<th align="center"><a href="<c:url value="/UserManagement"/>">Manage Users</a></th>
 			</TR>
 		</TBODY>
 	</table>
 	</form:form>
-<%-- <footer>
+<footer>
   <p>Logged in as: ${user.name}</p>
-</footer> --%>
+</footer>
 </body>
 </html>

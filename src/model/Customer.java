@@ -1,67 +1,111 @@
 package model;
 
-import java.io.Serializable;
-import java.util.Date;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
-public class Customer implements Serializable {
+import org.hibernate.annotations.GenericGenerator;
+
+//import java.util.Date;
+
+@Entity
+public class Customer {
+//	private enum Relation {
+//		CUSTOMER, PARTNER, PROSPECT;
+//	}
+	private Long id;
 	private String company;
 	private String contactPerson;
-	private Adres adres;
-	private Adres billingAdres;
+	private Adress adress;
+	private Adress billingAdress;
 	private String phoneNumber;
 	private String faxNumber;
+
 	private String email;
-	private Date birthday;
+//	private Date birthday;
 //	private Note[] notes;
-	
-	private enum Relation {
-		CUSTOMER, PARTNER, PROSPECT;
-	}
-	
-	public Customer() {
-		
-	}
-	
-	public Customer(String company, String contactPerson, Adres adres, Adres billingAdres, String phoneNumber, String faxNumber, String email) {
+
+	public Customer() {}
+
+	public Customer(String company, String contactPerson, Adress adres, Adress billingAdres, String phoneNumber, String faxNumber, String email) {
 		this.company = company;
 		this.contactPerson = contactPerson;
-		this.adres = adres;
-		this.billingAdres = billingAdres;
+		this.adress = adres;
+		this.billingAdress = billingAdres;
 		this.phoneNumber = phoneNumber;
 		this.faxNumber = faxNumber;
 		this.email = email;
 	}
 
+	
+	@Id
+	@GeneratedValue(generator="increment")
+	@GenericGenerator(name="increment", strategy = "increment")
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	@OneToOne
+	public Adress getAdress() {
+		return adress;
+	}
+
+	@OneToOne
+	public Adress getBillingAdress() {
+		return billingAdress;
+	}
+
 	public String getCompany() {
 		return company;
+	}
+	
+	public String getContactPerson() {
+		return contactPerson;
+	}
+	
+	public String getEmail() {
+		return email;
+	}
+	
+	public String getFaxNumber() {
+		return faxNumber;
+	}
+
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	public void setAdress(Adress adress) {
+		this.adress = adress;
+	}
+
+	public void setBillingAdress(Adress billingAdress) {
+		this.billingAdress = billingAdress;
 	}
 
 	public void setCompany(String company) {
 		this.company = company;
 	}
 
-	public String getContactPerson() {
-		return contactPerson;
-	}
-
 	public void setContactPerson(String contactPerson) {
 		this.contactPerson = contactPerson;
 	}
 
-	public Adres getAdres() {
-		return adres;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
-	public void setAdres(Adres adres) {
-		this.adres = adres;
+	public void setFaxNumber(String faxNumber) {
+		this.faxNumber = faxNumber;
 	}
 
-	public Adres getBillingAdres() {
-		return billingAdres;
-	}
-
-	public void setBillingAdres(Adres billingAdres) {
-		this.billingAdres = billingAdres;
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
 	}
 	
 	

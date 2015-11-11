@@ -8,11 +8,10 @@
 <title>Login</title>
 <link href="<c:url value="/resources/form.css" />" rel="stylesheet"  type="text/css" />	
 </head>
-<body>
+<body> 
 <H1>CRM</H1>
 <P>Welcome to the login page. Please enter your username</P>
-<form:form id="form" method="post" cssClass="cleanform">
-<!-- <form method="POST" action="/Project_CRM_Leenhouwers/ProcessLogin">  -->
+<form:form id="form" method="post" cssClass="cleanform" command="user">
 <TABLE>
 	<TBODY>
 		<TR>

@@ -24,7 +24,7 @@ public class Login {
 	public User createUser() {
 		return new User();
 	}
-	
+	 
 	@RequestMapping()
 	public String login(@CookieValue(value = "idCookie", defaultValue = "") String name, Model model) {
 		model.addAttribute("name",name);
@@ -33,37 +33,12 @@ public class Login {
 	
 	
 	@RequestMapping(method=RequestMethod.POST)
-	public String processLogin(HttpServletResponse response, User user){
+	public String processLogin(HttpServletResponse response, @ModelAttribute("user") User user){
 		Cookie idCookie = new Cookie("idCookie", user.getName());
 		idCookie.setMaxAge(7*24*60*60);
 		response.addCookie(idCookie);		
-		return "MainMenu";
+		return "redirect:MainMenu";
 	}
 }
-/*
-@Controller
-@RequestMapping("/")
-@SessionAttributes("user")
-public class Login {
-	
-	@ModelAttribute("user")
-	public User createUser() {
-		return new User();
-	}
-	
-	@RequestMapping()
-	public String login(@CookieValue(value = "idCookie", defaultValue = "") String name, Model model) {
-		model.addAttribute("name",name);
-		return "Login";
-	}
-	
-	
-	@RequestMapping(method=RequestMethod.POST)
-	public String processLogin(HttpServletResponse response, String userName){
-		Cookie idCookie = new Cookie("idCookie", userName);
-		idCookie.setMaxAge(7*24*60*60);
-		response.addCookie(idCookie);		
-		return "MainMenu";
-	}
-}*/
+
 
