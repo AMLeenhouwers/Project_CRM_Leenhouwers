@@ -20,8 +20,8 @@ public class Customer {
 	private Adress adress;
 	private Adress billingAdress;
 	private String phoneNumber;
+	private String mobileNumber;
 	private String faxNumber;
-
 	private String email;
 //	private Date birthday;
 //	private Note[] notes;
@@ -106,6 +106,14 @@ public class Customer {
 
 	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
+	}
+
+	public String getMobileNumber() {
+		return mobileNumber;
+	}
+
+	public void setMobileNumber(String mobileNumber) {
+		this.mobileNumber = mobileNumber;
 	}
 	
 	

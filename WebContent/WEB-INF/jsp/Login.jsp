@@ -10,10 +10,9 @@
 </head>
 <body> 
 <H1>CRM</H1>
-<P>Welcome to the login page. Please enter your username</P>
 <form:form id="form" method="post" cssClass="cleanform" commandName="user">
 	<div class="header">
-		<h2>Form</h2>
+		<h2>Welcome to the login page. Please enter your username</h2>
 		<c:if test="${not empty message}">
 		<div id="message" class="error">${message}</div>	
 		</c:if>
