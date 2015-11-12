@@ -11,6 +11,6 @@
 <body>
 	<h1>CRM</h1>
 	<h2>User has been added</h2>
-	<p><a href="<c:url value="/MainMenu"/>">Return to main menu</a></p>
+	<p><a href="<c:url value="/Secure/MainMenu"/>">Return to main menu</a></p>
 </body>
 </html>

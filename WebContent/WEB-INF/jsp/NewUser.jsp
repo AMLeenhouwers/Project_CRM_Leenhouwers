@@ -15,18 +15,6 @@
 <form:form id="form" method="post" cssClass="cleanform" commandName="newUser">
 <TABLE>
 	<TBODY>
-<!-- 		<TR>
-			<TD>Username:</TD>
-			<TD><INPUT type="text" name="name" size="40" maxlength="50"></TD>
-		</TR>
-		<TR>
-			<TD>Password:</TD>
-			<TD><INPUT type="password" name="password" size="20" maxlength="20"></TD>
-		</TR>
-		<TR>
-			<td>User may add customers:</td>
-				<td><input type="checkbox" name="addPermission"/></td>
-				 -->
 			<tr><td>
 			<fieldset>
 		  		<legend>User details</legend>

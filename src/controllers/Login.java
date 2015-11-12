@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import model.User;
+import model.UserValidator;
 
 
 @Controller
@@ -33,13 +34,18 @@ public class Login {
 	
 	
 	@RequestMapping(method=RequestMethod.POST)
-	public String processLogin(HttpServletResponse response, @ModelAttribute("user") User user){
-//	System.out.println(UserDoa.findUserByName(user.getName()));	
-		Cookie idCookie = new Cookie("idCookie", user.getName());
-		idCookie.setMaxAge(7*24*60*60);
-		response.addCookie(idCookie);	
-	//	if() return null;
-		return "redirect:MainMenu";
+	public String processLogin(HttpServletResponse response, @ModelAttribute("user") User user, Model model){
+		if(!UserValidator.verifyUser(user)) {
+			String message = "Incorrect username and/or password";
+			model.addAttribute("message", message);
+			return "Login";
+		}
+		else {
+			Cookie idCookie = new Cookie("idCookie", user.getName());
+			idCookie.setMaxAge(7*24*60*60);
+			response.addCookie(idCookie);	
+			return "redirect:/Secure/MainMenu";
+		}
 	}
 }
 

@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class MainMenu {
 
-	@RequestMapping("/MainMenu")
+	@RequestMapping("/Secure/MainMenu")
 	public String main(){
 		return "MainMenu";
 	}

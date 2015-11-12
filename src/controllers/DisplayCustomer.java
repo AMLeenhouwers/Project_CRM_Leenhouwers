@@ -11,7 +11,7 @@ import model.CustomerDoa;
 @Controller
 public class DisplayCustomer {
 	
-	@RequestMapping(value="/DisplayCustomer/{id}")
+	@RequestMapping(value="/Secure/DisplayCustomer/{id}")
 	public String displayCustomer(@PathVariable String id, Model model) {
 		Long key;
 		try{

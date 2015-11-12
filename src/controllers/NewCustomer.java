@@ -13,14 +13,14 @@ import model.CustomerDoa;
 public class NewCustomer {
 	
 
-	@RequestMapping(value="/NewCustomer", method=RequestMethod.GET)
+	@RequestMapping(value="/Secure/NewCustomer", method=RequestMethod.GET)
 	public String addEmptyCustomer(Model model) {
 		Customer customer = new Customer();
 		model.addAttribute("customer", customer);
 		return "NewCustomer";
 	}
 
-	@RequestMapping(value="/NewCustomer", method=RequestMethod.POST)
+	@RequestMapping(value="/Secure/NewCustomer", method=RequestMethod.POST)
 	public String addNewCustomer(@ModelAttribute("customer") Customer customer, Model model) {
 		CustomerDoa.addCustomer(customer);
 		model.addAttribute("customer", customer);

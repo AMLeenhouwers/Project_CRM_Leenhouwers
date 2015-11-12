@@ -18,8 +18,8 @@
 	<table>
 		<TBODY>
 			<TR>
-				<th align="center"><a href="<c:url value="/UserManagement/NewUser"/>">Add a new user</a></th>
-				<th align="center"><a href="<c:url value="/UserManagement/SearchUser"/>">Search a user</a></th>
+				<th align="center"><a href="<c:url value="/Secure/UserManagement/NewUser"/>">Add a new user</a></th>
+				<th align="center"><a href="<c:url value="/Secure/UserManagement/SearchUser"/>">Search a user</a></th>
 <%-- 				<th align="center"><a href="<c:url value="/DeleteCustomer"/>">Search and delete a customer</a></th> --%>
 
 			</TR>

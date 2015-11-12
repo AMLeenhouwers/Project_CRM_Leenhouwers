@@ -18,11 +18,11 @@
 	<table>
 		<TBODY>
 			<TR>
-				<th align="center"><a href="<c:url value="/NewCustomer"/>">Add a new customer</a></th>
-				<th align="center"><a href="<c:url value="/SearchCustomer"/>">Search a customer</a></th>
-				<th align="center"><a href="<c:url value="/DeleteCustomer"/>">Search and delete a customer</a></th>
-				<th align="center"><a href="<c:url value="/DisplayCustomer"/>">Display a customer</a></th>
-				<th align="center"><a href="<c:url value="/UserManagement"/>">Manage Users</a></th>
+				<th align="center"><a href="<c:url value="/Secure/NewCustomer"/>">Add a new customer</a></th>
+				<th align="center"><a href="<c:url value="/Secure/SearchCustomer"/>">Search a customer</a></th>
+				<th align="center"><a href="<c:url value="/Secure/DeleteCustomer"/>">Search and delete a customer</a></th>
+				<th align="center"><a href="<c:url value="/Secure/DisplayCustomer"/>">Display a customer</a></th>
+				<th align="center"><a href="<c:url value="/Secure/UserManagement"/>">Manage Users</a></th>
 			</TR>
 		</TBODY>
 	</table>

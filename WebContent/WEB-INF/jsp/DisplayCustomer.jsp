@@ -101,8 +101,8 @@
 		  </td>
 		  </tr>
 		  <tr>
-		  <td><a href="<c:url value="/MainMenu" />">Return to main menu</a></td>
-		  <td><a href="<c:url value="/RemoveCustomer/${customer.id}" />">Delete customer</a></td>
+		  <td><a href="<c:url value="/Secure/MainMenu" />">Return to main menu</a></td>
+		  <td><a href="<c:url value="/Secure/RemoveCustomer/${customer.id}" />">Delete customer</a></td>
 		  </tr>
 		  	</table>
 		  	

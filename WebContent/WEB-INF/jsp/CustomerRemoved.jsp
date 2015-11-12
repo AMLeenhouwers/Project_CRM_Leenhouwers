@@ -10,6 +10,6 @@
 </head>
 <body>
 	<h1>Customer has been removed</h1>
-	<p><a href="<c:url value="/MainMenu"/>">Return to main menu</a></p>
+	<p><a href="<c:url value="/Secure/MainMenu"/>">Return to main menu</a></p>
 </body>
 </html>

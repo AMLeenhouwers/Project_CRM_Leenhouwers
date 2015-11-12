@@ -13,27 +13,27 @@ import model.UserDoa;
 @Controller
 public class UserManagement {
 
-	@RequestMapping(value="/UserManagement")
+	@RequestMapping(value="/Secure/UserManagement")
 	public String userManagementMenu(){
 		
 		return "UserManagement";
 	}
 	
-	@RequestMapping(value="/UserManagement/NewUser", method=RequestMethod.GET)
+	@RequestMapping(value="/Secure/UserManagement/NewUser", method=RequestMethod.GET)
 	public String UserForm(Model model){
 		User user = new User();
 		model.addAttribute("newUser", user);
 		return "NewUser";
 	}
 	
-	@RequestMapping(value="/UserManagement/NewUser", method=RequestMethod.POST)
+	@RequestMapping(value="/Secure/UserManagement/NewUser", method=RequestMethod.POST)
 	public String addUser(@ModelAttribute("user") User user){
 		UserDoa.addUser(user);
 		return "NewUserAdded";
 	}
 	
 	
-	@RequestMapping(value="/UserManagement/RemoveUser/${id}")
+	@RequestMapping(value="/Secure/UserManagement/RemoveUser/${id}")
 	public String removeUser(@PathVariable String id, Model model) {
 			Long key;
 			try{

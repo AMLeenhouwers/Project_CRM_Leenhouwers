@@ -5,7 +5,9 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
+import javax.persistence.NoResultException;
 import javax.persistence.Persistence;
+import javax.persistence.TypedQuery;
 
 public class UserDoa {
 
@@ -43,10 +45,16 @@ public class UserDoa {
 	}
 	
 	public static User findUserByName(String name){
+		User user;
 		EntityManager em = emf.createEntityManager();
 		EntityTransaction t = em.getTransaction();
 		t.begin();
-		User user = em.createQuery("from User where name="+name, User.class).getSingleResult();
+		try {
+			TypedQuery<User> q = em.createQuery("from User u where u.name= :name", User.class);
+			user = q.setParameter("name", name).getSingleResult();
+		} catch (NoResultException e) {
+			return null;
+		}
 		t.commit();
 		em.close();	
 		return user;

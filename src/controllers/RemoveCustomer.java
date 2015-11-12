@@ -11,7 +11,7 @@ import model.CustomerDoa;
 public class RemoveCustomer {
 
 	
-	@RequestMapping(value="/RemoveCustomer/{id}")
+	@RequestMapping(value="/Secure/RemoveCustomer/{id}")
 	public String removeCustomer(@PathVariable String id, Model model) {
 		Long key;
 		try{
