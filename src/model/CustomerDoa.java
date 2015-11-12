@@ -53,8 +53,8 @@ public abstract class CustomerDoa {
 		EntityTransaction t = em.getTransaction();
 		t.begin();
 		try {
-			TypedQuery<Customer> q = em.createQuery("from Customer u where u.name= :name", Customer.class);
-			customer = q.setParameter("name", name).getResultList();
+			TypedQuery<Customer> q = em.createQuery("from Customer u where u.contactPerson= :contactPerson", Customer.class);
+			customer = q.setParameter("contactPerson", name).getResultList();
 		} catch (NoResultException e) {
 			return null;
 		}
@@ -70,6 +70,23 @@ public abstract class CustomerDoa {
 		t.begin();
 		try {
 			TypedQuery<Customer> q = em.createQuery("from Customer u where u.company= :company", Customer.class);
+			customer = q.setParameter("company", company).getResultList();
+		} catch (NoResultException e) {
+			return null;
+		}
+		t.commit();
+		em.close();	
+		return customer;
+	}
+	
+	public static List<Customer> findCustomersByCompanyAndContactPerson(String company, String contactPerson){
+		List<Customer> customer;
+		EntityManager em = emf.createEntityManager();
+		EntityTransaction t = em.getTransaction();
+		t.begin();
+		try {
+			TypedQuery<Customer> q = em.createQuery("from Customer u where u.company= :company and u.contactPerson= :contactPerson", Customer.class);
+			q.setParameter("contactPerson", contactPerson);
 			customer = q.setParameter("company", company).getResultList();
 		} catch (NoResultException e) {
 			return null;

@@ -19,7 +19,7 @@
  <form:form id="form" method="post" commandName="customer" cssClass="cleanform">
 		  <table>
 		  <tr>
-		  <td>
+		  <td> 
 		  	<fieldset>
 		  		<legend>General Info</legend>
 		  		<form:label path="company">

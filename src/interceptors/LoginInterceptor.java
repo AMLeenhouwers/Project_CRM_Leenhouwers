@@ -14,7 +14,6 @@ public class LoginInterceptor implements HandlerInterceptor  {
     public boolean preHandle(HttpServletRequest request,
             HttpServletResponse response, Object handler) throws Exception {
     	User user = (User) request.getSession().getAttribute("user");
-    	System.out.println(user);
     	if(user == null || !UserValidator.verifyUser(user)) {
     		response.sendRedirect("/Project_CRM_Leenhouwers/");
     	    return false;
