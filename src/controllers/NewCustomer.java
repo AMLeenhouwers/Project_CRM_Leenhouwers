@@ -24,8 +24,9 @@ public class NewCustomer {
 	public String addNewCustomer(@ModelAttribute("customer") Customer customer, Model model) {
 		CustomerDoa.addCustomer(customer);
 		model.addAttribute("customer", customer);
-		return "NewCustomerAdded";
+		return "CustomerUpdated";
 	}
+	
 //	
 //	@RequestMapping(value="/NewCustomerAdded", method=RequestMethod.POST)
 //	public String newCustomerAdded(){

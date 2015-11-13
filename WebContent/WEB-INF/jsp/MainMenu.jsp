@@ -16,9 +16,8 @@
 		<TBODY>
 			<TR>
 				<th align="center"><a href="<c:url value="/Secure/NewCustomer"/>">Add a new customer</a></th>
-				<th align="center"><a href="<c:url value="/Secure/SearchCustomer"/>">Search a customer</a></th>
-				<th align="center"><a href="<c:url value="/Secure/DeleteCustomer"/>">Search and delete a customer</a></th>
-				<th align="center"><a href="<c:url value="/Secure/DisplayCustomer"/>">Display a customer</a></th>
+				<th align="center"><a href="<c:url value="/Secure/SearchCustomer"/>">Search in customers</a></th>
+				<th align="center"><a href="<c:url value="/Secure/DisplayCustomers"/>">Display all customers</a></th>
 				<th align="center"><a href="<c:url value="/Secure/UserManagement"/>">Manage Users</a></th>
 			</TR>
 		</TBODY>

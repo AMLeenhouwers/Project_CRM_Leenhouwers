@@ -47,10 +47,10 @@ public class UserManagement {
 				return "UserRemoved";
 	}
 	
-//	@RequestMapping(value="/UserManagment")
-//	public String userManagementMenu(){
-//		
-//		return "UserManagement";
-//	}
+	@RequestMapping(value="/Secure/UserManagment/DisplayUsers")
+	public String displayUsers(Model model){
+		model.addAttribute("users", UserDoa.findAll());
+		return "DisplayUsers";
+	}
 	
 }

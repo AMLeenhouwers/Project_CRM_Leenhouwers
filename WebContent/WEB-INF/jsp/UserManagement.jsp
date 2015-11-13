@@ -17,12 +17,12 @@
 	<form:form id="form" method="post" cssClass="cleanform" action="/Project_CRM_Leenhouwers/MainMenu">
 	<table>
 		<TBODY>
-			<TR>
-				<th align="center"><a href="<c:url value="/Secure/UserManagement/NewUser"/>">Add a new user</a></th>
-				<th align="center"><a href="<c:url value="/Secure/UserManagement/SearchUser"/>">Search a user</a></th>
-<%-- 				<th align="center"><a href="<c:url value="/DeleteCustomer"/>">Search and delete a customer</a></th> --%>
+			<tr>
+				<td align="center"><a href="<c:url value="/Secure/UserManagement/NewUser"/>">Add a new user</a></td>
+				<td align="center"><a href="<c:url value="/Secure/UserManagement/DisplayUsers"/>">Display users</a></td>
+				<td><a href="<c:url value="/Secure/MainMenu" />">Return to main menu</a></td>
 
-			</TR>
+			</tr>
 		</TBODY>
 	</table>
 	</form:form>

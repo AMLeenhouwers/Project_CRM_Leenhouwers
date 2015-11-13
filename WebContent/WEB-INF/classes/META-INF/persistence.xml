@@ -14,17 +14,4 @@
 			<property name="hibernate.connection.password" value="sqlaml"/>
 		</properties>
     </persistence-unit>
-    
-        <persistence-unit name="user_db">
-        <provider>org.hibernate.ejb.HibernatePersistence</provider>
-        <properties>
-	        <property name="hibernate.hbm2ddl.auto" value="update"/>
-			<property name="hibernate.show_sql" value="true"/>
-			<property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
-			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
-			<property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/user_db"/>
-			<property name="hibernate.connection.username" value="aml"/>
-			<property name="hibernate.connection.password" value="sqlaml"/>
-		</properties>
-    </persistence-unit>
 </persistence>

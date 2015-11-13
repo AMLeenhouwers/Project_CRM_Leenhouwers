@@ -44,7 +44,6 @@ public class Login {
 			Cookie idCookie = new Cookie("idCookie", user.getName());
 			idCookie.setMaxAge(7*24*60*60);
 			response.addCookie(idCookie);	
-//			return "Login";
 				return "redirect:/Secure/MainMenu";
 		}
 	}

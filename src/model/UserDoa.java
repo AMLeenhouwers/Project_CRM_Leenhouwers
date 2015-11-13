@@ -11,7 +11,7 @@ import javax.persistence.TypedQuery;
 
 public class UserDoa {
 
-	private static EntityManagerFactory emf = Persistence.createEntityManagerFactory("user_db");
+	private static EntityManagerFactory emf = Persistence.createEntityManagerFactory("customer_db");
 	
 	public static void addUser(User user) {
 		EntityManager em = emf.createEntityManager();

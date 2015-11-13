@@ -7,7 +7,7 @@
 <title>Search results</title>
 <link href="<c:url value="/resources/form.css" />" rel="stylesheet"  type="text/css" />	
 </head>
-<body>
+<body> 
 <h1>CRM</h1>
 	<div id="formsContent">
 		<h2>Search results</h2>
@@ -26,9 +26,10 @@
 		  		Fax number: ${customer.faxNumber} <br>
 		  		Email: ${customer.email} <br>
 		  		company: ${customer.company} <br>
-	
+		  		
+			<a href="<c:url value="/Secure/Notes/${customer.id}" />">Notes</a>
 		  	</fieldset>
-			<a href="<c:url value="/Secure/DisplayCustomer/${customer.id}" />">Display customer</a>
+			<a href="<c:url value="/Secure/EditCustomer/${customer.id}" />">Edit customer</a>
 		  	<a href="<c:url value="/Secure/RemoveCustomer/${customer.id}" />">Remove customer</a>
 		  </td>
 		  </c:forEach>

@@ -24,7 +24,7 @@ public abstract class CustomerSearcher {
 		return positionedCustomers;
 	}
 	
-	private static ArrayList<ArrayList<Customer>> positionCustomers(ArrayList<Customer> customers){
+	public static ArrayList<ArrayList<Customer>> positionCustomers(ArrayList<Customer> customers){
 		ArrayList<ArrayList<Customer>> positionedCustomers = new ArrayList<ArrayList<Customer>>();
 		for(int i = 0; i < customers.size(); i+=3){
 			ArrayList<Customer> c = new ArrayList<Customer>();

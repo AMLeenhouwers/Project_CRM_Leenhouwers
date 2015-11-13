@@ -2,16 +2,18 @@ package controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import model.Customer;
 import model.CustomerDoa;
 
 @Controller
-public class DisplayCustomer {
+public class EditCustomer {
 	
-	@RequestMapping(value="/Secure/DisplayCustomer/{id}")
+	@RequestMapping(value="/Secure/EditCustomer/{id}", method=RequestMethod.GET)
 	public String displayCustomer(@PathVariable String id, Model model) {
 		Long key;
 		try{
@@ -23,12 +25,18 @@ public class DisplayCustomer {
 		}
 		Customer customer = CustomerDoa.findCustomer(key);
 		if(customer == null){
-			// geen rit met gegeven id? error 404
 			return null;
 		} else {
 			model.addAttribute("customer", customer);
-			return "DisplayCustomer";
+			return "EditCustomer";
 		}
+	}
+	
+	@RequestMapping(value="/Secure/EditCustomer/{id}", method=RequestMethod.POST)	
+	public String editCustomer(@ModelAttribute ("customer") Customer formData, Model model){
+		Customer customer = CustomerDoa.updateCustomer(formData);
+		model.addAttribute("customer", customer);
+		return "CustomerUpdated";
 	}
 	
 	

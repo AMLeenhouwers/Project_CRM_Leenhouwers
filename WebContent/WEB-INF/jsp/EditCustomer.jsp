@@ -10,12 +10,8 @@
 <body>
 <h1>CRM</h1>
 	<div id="formsContent">
-		<h2>Add new customer</h2>
-		<p>
-			Please fill in all known information
-		</p>
-		
- <form:form id="form" commandName="customer" cssClass="cleanform">
+		<h2>Edit Customer</h2>
+ <form:form id="form" commandName="customer" cssClass="cleanform" method="post">
 		  <table>
 		  <tr>
 		  <td> 
@@ -104,10 +100,13 @@
 		  		</fieldset>
 		  </td>
 		  </tr>
-			<tr>
+		  	<tr><td> <input type="submit" name="submit" value="Apply changes"></td>
 		  	<td><a href="<c:url value="/Secure/RemoveCustomer/${customer.id}" />">Remove customer</a></td>
-		  			 <td> <a href="<c:url value="/Secure/MainMenu" />">Main Menu</a></td></tr>
+		  	<td> <a href="<c:url value="/Secure/MainMenu" />">Main Menu</a></td></tr>
+
 		  	</table>
+		  	
+		  	
 		  	</form:form>
 		  	</div>
 </body>

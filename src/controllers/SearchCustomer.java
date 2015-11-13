@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import model.Customer;
+import model.CustomerDoa;
 import model.CustomerSearcher;
 
 @Controller
@@ -35,5 +36,14 @@ public class SearchCustomer {
 		model.addAttribute("customers", customers);
 		return "DisplayCustomers";
 	}
+	
+	@RequestMapping(value="/Secure/DisplayCustomers")
+	public String findAllCustomers(Model model) {
+		ArrayList<Customer> customers = (ArrayList<Customer>)CustomerDoa.findAll();
+		ArrayList<ArrayList<Customer>> customersPositioned =CustomerSearcher.positionCustomers(customers );
+		model.addAttribute("customers", customersPositioned);
+		return "DisplayCustomers";
+	}
+	
 	
 }

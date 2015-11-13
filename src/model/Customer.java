@@ -1,8 +1,12 @@
 package model;
 
+import java.util.ArrayList;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 import org.hibernate.annotations.GenericGenerator;
@@ -24,19 +28,21 @@ public class Customer {
 	private String faxNumber;
 	private String email;
 //	private Date birthday;
-//	private Note[] notes;
+	private ArrayList<Note> notes;
 
-	public Customer() {}
-
-	public Customer(String company, String contactPerson, Adress adres, Adress billingAdres, String phoneNumber, String faxNumber, String email) {
-		this.company = company;
-		this.contactPerson = contactPerson;
-		this.adress = adres;
-		this.billingAdress = billingAdres;
-		this.phoneNumber = phoneNumber;
-		this.faxNumber = faxNumber;
-		this.email = email;
+	public Customer() {
+		notes = new ArrayList<Note>();
 	}
+//
+//	public Customer(String company, String contactPerson, Adress adres, Adress billingAdres, String phoneNumber, String faxNumber, String email) {
+//		this.company = company;
+//		this.contactPerson = contactPerson;
+//		this.adress = adres;
+//		this.billingAdress = billingAdres;
+//		this.phoneNumber = phoneNumber;
+//		this.faxNumber = faxNumber;
+//		this.email = email;
+//	}
 
 	
 	@Id
@@ -50,12 +56,12 @@ public class Customer {
 		this.id = id;
 	}
 
-	@OneToOne
+	@OneToOne(cascade=CascadeType.ALL)
 	public Adress getAdress() {
 		return adress;
 	}
 
-	@OneToOne
+	@OneToOne(cascade=CascadeType.ALL)
 	public Adress getBillingAdress() {
 		return billingAdress;
 	}
@@ -99,6 +105,17 @@ public class Customer {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
+	//@OneToMany(cascade=CascadeType.ALL)
+	public ArrayList<Note> getNotes() {
+		return notes;
+	}
+
+
+	public void setNotes(ArrayList<Note> notes) {
+		this.notes = notes;
+	}
+
 
 	public void setFaxNumber(String faxNumber) {
 		this.faxNumber = faxNumber;

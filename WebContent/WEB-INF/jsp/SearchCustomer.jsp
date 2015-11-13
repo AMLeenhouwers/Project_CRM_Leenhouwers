@@ -31,7 +31,10 @@
 		  	</fieldset>	
 			</td></tr>
 			<tr> 
-			<td><INPUT type="submit" name="submit" value="Search customer"></td></tr>
+			<td><INPUT type="submit" name="submit" value="Search customer"></td>
+			<td><a href="<c:url value="/Secure/MainMenu" />">Return to main menu</a></td>
+			</tr>
+			
 	</TBODY>
 </TABLE>
 </form:form>
