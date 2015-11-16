@@ -47,7 +47,7 @@ public class UserManagement {
 				return "UserRemoved";
 	}
 	
-	@RequestMapping(value="/Secure/UserManagment/DisplayUsers")
+	@RequestMapping(value="/Secure/UserManagement/DisplayUsers")
 	public String displayUsers(Model model){
 		model.addAttribute("users", UserDoa.findAll());
 		return "DisplayUsers";

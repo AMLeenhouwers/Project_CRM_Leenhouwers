@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>New Customer</title>
-<link href="<c:url value="/resources/form.css" />" rel="stylesheet"  type="text/css" />	
+<link href="<c:url value="/resources/form.css"/>" rel="stylesheet"  type="text/css"/>	
 </head>
 <body>
 <h1>CRM</h1>
@@ -109,5 +109,13 @@
 		  	</table>
 		  	</form:form>
 		  	</div>
+		  	
+		  	<a href="<c:url value="/Secure/MainMenu"/>" class="myButton">Main menu</a>
+
+		  	
+<footer>
+  <p>Logged in as: ${user.name}</p>
+  ${user.userPermission}
+</footer>  	
 </body>
 </html>

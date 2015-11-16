@@ -19,8 +19,8 @@ public abstract class CustomerDoa {
 		EntityManager em = emf.createEntityManager();
 		EntityTransaction t = em.getTransaction();
 		t.begin();
-		em.persist(customer.getAdress());
-		em.persist(customer.getBillingAdress());
+//		em.persist(customer.getAdress());
+//		em.persist(customer.getBillingAdress());
 		em.persist(customer);
 		t.commit();
 		em.close();			
@@ -32,8 +32,8 @@ public abstract class CustomerDoa {
 		t.begin();
 		Customer customer = em.find(Customer.class, id);
 		if(customer != null) {
-			em.remove(customer.getAdress());
-			em.remove(customer.getBillingAdress());				
+//			em.remove(customer.getAdress());
+//			em.remove(customer.getBillingAdress());				
 			em.remove(customer);
 		}
 		t.commit();
@@ -45,7 +45,6 @@ public abstract class CustomerDoa {
 		EntityTransaction t = em.getTransaction();
 		t.begin();
 		Customer customer = em.find(Customer.class, formData.getId());
-	//	formData.setId(customer.getId());
 		
 		BeanUtils.copyProperties(formData, customer);
 
@@ -55,6 +54,21 @@ public abstract class CustomerDoa {
 		em.close();	
 		return customer;
 	}
+	
+	
+	public static Customer addNote(Long customerId, Note note){
+		EntityManager em = emf.createEntityManager();
+		EntityTransaction t = em.getTransaction();
+		t.begin();
+		Customer customer = em.find(Customer.class, customerId);
+		customer.getNotes().add(note);
+		em.persist(customer);
+		
+		t.commit();
+		em.close();	
+		return customer;
+	}
+	
 	
 	public static Customer findCustomer(Long id){
 		EntityManager em = emf.createEntityManager();

@@ -1,9 +1,11 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
@@ -28,7 +30,7 @@ public class Customer {
 	private String faxNumber;
 	private String email;
 //	private Date birthday;
-	private ArrayList<Note> notes;
+	private List<Note> notes;
 
 	public Customer() {
 		notes = new ArrayList<Note>();
@@ -106,13 +108,13 @@ public class Customer {
 		this.email = email;
 	}
 
-	//@OneToMany(cascade=CascadeType.ALL)
-	public ArrayList<Note> getNotes() {
+	@OneToMany(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
+	public List<Note> getNotes() {
 		return notes;
 	}
 
 
-	public void setNotes(ArrayList<Note> notes) {
+	public void setNotes(List<Note> notes) {
 		this.notes = notes;
 	}
 

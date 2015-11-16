@@ -7,12 +7,16 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 import org.hibernate.annotations.GenericGenerator;
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 public class Note {
 	private Long id;
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	private Date date;
 	private String message;
+	private String userName;
+	
 	
 	@Id
 	@GeneratedValue(generator="increment")
@@ -36,8 +40,19 @@ public class Note {
 	public String getMessage() {
 		return message;
 	}
-	public void setMessage(String note) {
-		this.message = note;
+	public void setMessage(String message) {
+		this.message = message;
 	}
+
+
+	public String getUserName() {
+		return userName;
+	}
+
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+	
 	
 }

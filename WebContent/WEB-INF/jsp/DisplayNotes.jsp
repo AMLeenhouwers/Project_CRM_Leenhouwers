@@ -21,10 +21,12 @@
 		  <legend>List of notes</legend>
 		  <table>
 		  <tr>
-		  <th>Date added</th><th>Message</th></tr>
+		  <th>Date</th><th>Added by User</th><th>Message</th></tr>
 		  		<c:forEach items="${customer.notes}" var="note">
+		  		
 		  		<tr><td>${note.date}</td>
-		  		<td>${note.note}</td></tr>
+		  		<td>${note.userName}</td>
+		  		<td>${note.message}</td></tr>
 		  		<tr>
 			  	<td><a href="<c:url value="/Secure/EditNote/${customer.id}/${note.id}" />">Edit note</a></td>
 			  	<td><a href="<c:url value="/Secure/RemoveNote/${customer.id}/${note.id}" />">Remove note</a></td>	
@@ -35,7 +37,7 @@
 		  	</form:form>  	
 		  </c:if>
 		  </div>
-		  	<a href="<c:url value="/Secure/Notes/{customerId}/AddNote"/>">Add new note</a>
+		  	<a href="<c:url value="/Secure/Notes/${customer.id}/AddNote"/>">Add new note</a>
 		  	<a href="<c:url value="/Secure/MainMenu"/>">Return to main menu</a>
 </body>
 </html>

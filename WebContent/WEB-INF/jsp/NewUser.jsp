@@ -32,7 +32,7 @@
 	  		<fieldset class="checkbox">
 				<legend>Request Additional Info</legend>
 				<table><tr><td>
-				<label><form:checkbox path="addPermission" value="true" />User may add customers</label>
+				<label><form:checkbox path="addPermission" value="true" />User may add/edit customers</label>
 				</td></tr>
 				<tr><td>
 				<label><form:checkbox path="removePermission" value="true" />User may remove customers</label>

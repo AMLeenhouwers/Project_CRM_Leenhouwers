@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import model.User;
+import model.UserDoa;
 import model.UserValidator;
 
 
@@ -25,7 +26,7 @@ public class Login {
 	public User createUser() {
 		return new User();
 	}
-	 
+
 	@RequestMapping()
 	public String login(@CookieValue(value = "idCookie", defaultValue = "") String name, Model model) {
 		model.addAttribute("name",name);
@@ -41,6 +42,8 @@ public class Login {
 			return "Login";
 		}
 		else {
+			user = UserDoa.findUserByName(user.getName());
+			model.addAttribute("user", user);
 			Cookie idCookie = new Cookie("idCookie", user.getName());
 			idCookie.setMaxAge(7*24*60*60);
 			response.addCookie(idCookie);	
