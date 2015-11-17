@@ -27,7 +27,7 @@ public abstract class CustomerDoa {
 	}
 	
 	public static void removeCustomer(Long id){
-		EntityManager em = emf.createEntityManager();
+		EntityManager em = emf.createEntityManager(); 
 		EntityTransaction t = em.getTransaction();
 		t.begin();
 		Customer customer = em.find(Customer.class, id);

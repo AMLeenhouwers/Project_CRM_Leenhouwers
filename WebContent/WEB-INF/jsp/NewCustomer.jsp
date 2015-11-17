@@ -105,17 +105,16 @@
 		  		</fieldset>
 		  </td>
 		  </tr>
-		  <tr><td> <input type="submit" name="submit" value="Create customer"></td></tr>
+		  <tr><td> <input type="submit" name="submit" value="Create customer" class="myButton"></td></tr>
 		  	</table>
 		  	</form:form>
 		  	</div>
 		  	
-		  	<a href="<c:url value="/Secure/MainMenu"/>" class="myButton">Main menu</a>
+		  	<a href="<c:url value="/Secure/MainMenu"/>" class="myButtonLink">Main menu</a>
 
 		  	
 <footer>
   <p>Logged in as: ${user.name}</p>
-  ${user.userPermission}
 </footer>  	
 </body>
 </html>

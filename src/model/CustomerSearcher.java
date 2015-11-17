@@ -16,8 +16,6 @@ public abstract class CustomerSearcher {
 
 		if(!contactPerson.equals("") && !company.equals("")) {
 			customers.addAll(CustomerDoa.findCustomersByCompanyAndContactPerson(company, contactPerson));
-//			customers.addAll(CustomerDoa.findCustomersByCompany(company));
-//			customers.addAll(CustomerDoa.findCustomersByContactPerson(contactPerson));
 		}
 		
 		ArrayList<ArrayList<Customer>> positionedCustomers = positionCustomers(customers);

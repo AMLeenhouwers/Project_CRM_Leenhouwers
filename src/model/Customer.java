@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -12,14 +13,11 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 import org.hibernate.annotations.GenericGenerator;
+import org.springframework.format.annotation.DateTimeFormat;
 
-//import java.util.Date;
 
 @Entity
 public class Customer {
-//	private enum Relation {
-//		CUSTOMER, PARTNER, PROSPECT;
-//	}
 	private Long id;
 	private String company;
 	private String contactPerson;
@@ -29,7 +27,8 @@ public class Customer {
 	private String mobileNumber;
 	private String faxNumber;
 	private String email;
-//	private Date birthday;
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
+	private Date birthday;
 	private List<Note> notes;
 
 	public Customer() {
@@ -133,6 +132,16 @@ public class Customer {
 
 	public void setMobileNumber(String mobileNumber) {
 		this.mobileNumber = mobileNumber;
+	}
+
+
+	public Date getBirthday() {
+		return birthday;
+	}
+
+
+	public void setBirthday(Date birthday) {
+		this.birthday = birthday;
 	}
 	
 	

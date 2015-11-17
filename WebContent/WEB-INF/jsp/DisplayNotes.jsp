@@ -1,5 +1,6 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,30 +15,33 @@
 		<c:if test="${empty customer.notes}">
 		No notes have been saved for this customer
 		</c:if>
-		
 		<c:if test="${not empty customer.notes}">
  		<form:form id="form" cssClass="cleanform">   
 		  <fieldset>
 		  <legend>List of notes</legend>
-		  <table>
-		  <tr>
-		  <th>Date</th><th>Added by User</th><th>Message</th></tr>
-		  		<c:forEach items="${customer.notes}" var="note">
+		  
+		  		<c:forEach items="${customer.notes}" var="note">	 
+		  		<fieldset>
 		  		
-		  		<tr><td>${note.date}</td>
-		  		<td>${note.userName}</td>
-		  		<td>${note.message}</td></tr>
+		  		<legend>Note details</legend> 	
+		  		<table>	
+		  		<tr><th>Date:</th><th>Added by user:</th></tr>
+		  		<tr><td><input type="text" readonly value="<fmt:formatDate value="${note.date}" dateStyle="short"/>"></td>
+		  		<td><input type="text" readonly value="${note.userName}"></td>
+		  		<tr><th>Message:</th></tr>
+		  		<tr><td><textarea rows="4" cols="70" readonly> ${note.message}</textarea></td></tr>
 		  		<tr>
-			  	<td><a href="<c:url value="/Secure/EditNote/${customer.id}/${note.id}" />">Edit note</a></td>
-			  	<td><a href="<c:url value="/Secure/RemoveNote/${customer.id}/${note.id}" />">Remove note</a></td>	
+			  	<td><a href="<c:url value="/Secure/EditNote/${customer.id}/${note.id}" />" class="myButton">Edit note</a></td>
+			  	<td><a href="<c:url value="/Secure/RemoveNote/${customer.id}/${note.id}" />" class="myButton">Remove note</a></td>	
 			  	</tr>
+			  	  </table>
+			  	</fieldset>
 		  	</c:forEach>
-		  </table>
 		  </fieldset>
-		  	</form:form>  	
+		  </form:form>  	
 		  </c:if>
 		  </div>
-		  	<a href="<c:url value="/Secure/Notes/${customer.id}/AddNote"/>">Add new note</a>
-		  	<a href="<c:url value="/Secure/MainMenu"/>">Return to main menu</a>
+		  	<a href="<c:url value="/Secure/Notes/${customer.id}/AddNote"/>" class="myButtonLink">Add new note</a>
+		  	<a href="<c:url value="/Secure/MainMenu"/>" class="myButtonLink">Return to main menu</a>
 </body>
 </html>
