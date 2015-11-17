@@ -18,9 +18,9 @@
 	<table>
 		<TBODY>
 			<tr>
-				<td align="center"><a href="<c:url value="/Secure/UserManagement/NewUser"/>">Add a new user</a></td>
-				<td align="center"><a href="<c:url value="/Secure/UserManagement/DisplayUsers"/>">Display users</a></td>
-				<td><a href="<c:url value="/Secure/MainMenu" />">Return to main menu</a></td>
+				<td align="center"><a href="<c:url value="/Secure/UserManagement/NewUser"/>" class="myButtonLink">Add a new user</a></td>
+				<td align="center"><a href="<c:url value="/Secure/UserManagement/DisplayUsers"/>" class="myButtonLink">Display all users</a></td>
+				<td><a href="<c:url value="/Secure/MainMenu" />" class="myButtonLink">Return to main menu</a></td>
 
 			</tr>
 		</TBODY>

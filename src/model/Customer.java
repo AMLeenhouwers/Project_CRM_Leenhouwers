@@ -11,6 +11,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.validation.constraints.Pattern;
 
 import org.hibernate.annotations.GenericGenerator;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -26,8 +27,10 @@ public class Customer {
 	private String phoneNumber;
 	private String mobileNumber;
 	private String faxNumber;
+	@Pattern(regexp=".+@.+\\..+", message="Wrong email!")
 	private String email;
 	@DateTimeFormat(pattern = "dd/MM/yyyy")
+//	@Pattern(regexp= "[0-3][1-9]-[0-1][1-2]-[0-9]{4}", message="Not in format dd/mm/yyy!")
 	private Date birthday;
 	private List<Note> notes;
 

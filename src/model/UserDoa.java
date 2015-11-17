@@ -9,6 +9,8 @@ import javax.persistence.NoResultException;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 
+import org.springframework.beans.BeanUtils;
+
 public class UserDoa {
 
 	private static EntityManagerFactory emf = Persistence.createEntityManagerFactory("customer_db");
@@ -32,6 +34,20 @@ public class UserDoa {
 		}
 		t.commit();
 		em.close();	
+	}
+	
+	public static User updateUser(User formData){
+		EntityManager em = emf.createEntityManager();
+		EntityTransaction t = em.getTransaction();
+		t.begin();
+		User user = em.find(User.class, formData.getId());		
+		BeanUtils.copyProperties(formData, user);
+
+		em.persist(user);
+		
+		t.commit();
+		em.close();	
+		return user;
 	}
 	
 	public static User findUser(Long id){

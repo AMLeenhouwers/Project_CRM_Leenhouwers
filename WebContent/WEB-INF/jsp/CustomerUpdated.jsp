@@ -11,8 +11,8 @@
 <body>
 	<h1>CRM</h1>
 	<h2>Customer has been updated</h2>
-	<p><a href="<c:url value="/Secure/EditCustomer/${customer.id}"/>"> Edit the customer</a></p>
-	<p><a href="<c:url value="/Secure/MainMenu"/>">Return to main menu</a></p>
+	<p><a href="<c:url value="/Secure/EditCustomer/${customer.id}"/>" class="myButtonLink"> Edit the customer</a></p>
+	<p><a href="<c:url value="/Secure/MainMenu"/>" class="myButtonLink">Return to main menu</a></p>
 
 <footer>
   <p>Logged in as: ${user.name}</p>

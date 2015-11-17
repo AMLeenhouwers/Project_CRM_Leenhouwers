@@ -12,6 +12,7 @@ public class User {
 	private String name;
 	private String password;
 	private boolean removePermission = false;
+	private boolean editPermission = false;
 	private boolean addPermission = false;
 	private boolean userPermission = false;
 
@@ -72,6 +73,14 @@ public class User {
 
 	public void setUserPermission(boolean userPermission) {
 		this.userPermission = userPermission;
+	}
+
+	public boolean isEditPermission() {
+		return editPermission;
+	}
+
+	public void setEditPermission(boolean editPermission) {
+		this.editPermission = editPermission;
 	}
 
 	

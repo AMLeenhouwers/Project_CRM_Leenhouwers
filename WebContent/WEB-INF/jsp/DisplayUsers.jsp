@@ -12,26 +12,30 @@
 	<div id="formsContent">
 		<h2>User list</h2>
  <form:form id="form" cssClass="cleanform">
-		  <table>
-		  <c:forEach items="${users}" var="userVar"> 
-		  <tr>
-		  <td>
-		  	<fieldset>
-		  		<legend>User Info</legend>
-		  		User Name: ${userVar.name} <br>
-		  		Password: ****** <br>
-		  		User can add customers: ${userVar.addPermission} <br>
-		  		User can remove customers: ${userVar.removePermission}<br>
-		  		User has access to user management: ${userVar.userPermission} <br>
-		  	</fieldset>
-			<a href="<c:url value="/Secure/EditUser/${userVar.id}" />">Edit user</a>
-		  	<a href="<c:url value="/Secure/RemoveUser/${userVar.id}" />">Remove user</a>
-		  </td>
-		  </tr>
-		  	</c:forEach>
-		  	</table>
-		  	</form:form>
-		  	</div>
-		  	<a href="<c:url value="/Secure/MainMenu" />">Return to main menu</a>
+	  <c:forEach items="${users}" var="userVar"> 
+	  	<fieldset>
+	  		<legend>User Info</legend>
+	  		<table>		  
+		  		<tr><th>User Name</th> 
+		  		<td>${userVar.name}</td></tr>
+		  		<tr><th>Password</th> 
+		  		<td>******</td></tr>
+		  		<tr><th>User can add customers </th>  
+		  		<td>${userVar.addPermission}</td></tr>
+		  		<tr><th>User can edit customers </th>  
+		  		<td>${userVar.editPermission}</td></tr>	  		
+		  		<tr><th>User can remove customers </th> 
+		  		<td> ${userVar.removePermission}</td></tr>
+		  		<tr><th>User has access to user management</th> 
+		  		<td> ${userVar.userPermission} </td></tr>
+	  		</table>
+		<a href="<c:url value="/Secure/UserManagement/${userVar.id}" />" class="myButton">Edit user</a>
+	  	<a href="<c:url value="/Secure/UserManagement/RemoveUser/${userVar.id}" />" class="myButton">Remove user</a>	  		  		
+	  	</fieldset>
+	  	</c:forEach>
+
+	  	</form:form>
+	  	</div>
+	  	<a href="<c:url value="/Secure/MainMenu" />" class="myButtonLink">Return to main menu</a>
 </body>
 </html>

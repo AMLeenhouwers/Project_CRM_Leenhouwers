@@ -1,7 +1,10 @@
 package controllers;
 
+import javax.validation.Valid;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -21,7 +24,10 @@ public class NewCustomer {
 	}
 
 	@RequestMapping(value="/Secure/NewCustomer", method=RequestMethod.POST)
-	public String addNewCustomer(@ModelAttribute("customer") Customer customer, Model model) {
+	public String addNewCustomer(@Valid @ModelAttribute("customer") Customer customer, BindingResult result, Model model) {
+	        if(result.hasErrors()) {
+	            return "NewCustomer";
+	        }
 		CustomerDoa.addCustomer(customer);
 		model.addAttribute("customer", customer);
 		return "CustomerUpdated";

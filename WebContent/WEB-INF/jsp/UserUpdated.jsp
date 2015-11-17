@@ -5,11 +5,17 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>New Customer Added</title>
+<title>Customer updated</title>
 <link href="<c:url value="/resources/form.css" />" rel="stylesheet"  type="text/css" />		
 </head>
 <body>
-	<h1>Customer has been removed</h1>
+	<h1>CRM</h1>
+	<h2>Customer has been updated</h2>
 	<p><a href="<c:url value="/Secure/MainMenu"/>" class="myButtonLink">Return to main menu</a></p>
+
+<footer>
+  <p>Logged in as: ${user.name}</p>
+</footer>	
+	
 </body>
 </html>

@@ -31,8 +31,8 @@
 		  		<tr><th>Message:</th></tr>
 		  		<tr><td><textarea rows="4" cols="70" readonly> ${note.message}</textarea></td></tr>
 		  		<tr>
-			  	<td><a href="<c:url value="/Secure/EditNote/${customer.id}/${note.id}" />" class="myButton">Edit note</a></td>
-			  	<td><a href="<c:url value="/Secure/RemoveNote/${customer.id}/${note.id}" />" class="myButton">Remove note</a></td>	
+<%-- 			  	<td><a href="<c:url value="/Secure/EditNote/${customer.id}/${note.id}" />" class="myButton">Edit note</a></td> --%>
+			  	<c:if test="${user.removePermission}"><td><a href="<c:url value="/Secure/RemoveNote/${customer.id}/${note.id}" />" class="myButton">Remove note</a></td></c:if>	
 			  	</tr>
 			  	  </table>
 			  	</fieldset>
@@ -41,7 +41,7 @@
 		  </form:form>  	
 		  </c:if>
 		  </div>
-		  	<a href="<c:url value="/Secure/Notes/${customer.id}/AddNote"/>" class="myButtonLink">Add new note</a>
+		  	<a href="<c:url value="/Secure/Notes/${customer.id}/AddNote"/>" class="myButtonLink">Add a new note</a>
 		  	<a href="<c:url value="/Secure/MainMenu"/>" class="myButtonLink">Return to main menu</a>
 </body>
 </html>

@@ -12,7 +12,7 @@
 <H1>CRM</H1>
 <div id="formsContent">
 <h2>Please enter user details</h2>
-<form:form id="form" method="post" cssClass="cleanform" commandName="newUser">
+<form:form id="form" method="post" cssClass="cleanform" commandName="editUser">
 <TABLE>
 	<TBODY>
 			<tr><td>
@@ -46,7 +46,7 @@
 			</fieldset>
 			</td></tr>
 			<tr> 
-			<td><INPUT type="submit" name="submit" value="AddUser" class="myButton"></td>
+			<td><INPUT type="submit" name="submit" value="Edit user" class="myButton"></td>
 		</TR>
 	</TBODY>
 </TABLE>

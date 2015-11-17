@@ -9,7 +9,8 @@
 <link href="<c:url value="/resources/form.css" />" rel="stylesheet"  type="text/css" />		
 </head>
 <body>
-	<h1>Customer has been removed</h1>
+	<h1>CRM</h1>
+	<h2>Note has been added</h2>
 	<p><a href="<c:url value="/Secure/MainMenu"/>" class="myButtonLink">Return to main menu</a></p>
 </body>
 </html>

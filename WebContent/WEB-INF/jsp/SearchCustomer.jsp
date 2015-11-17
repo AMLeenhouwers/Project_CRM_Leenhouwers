@@ -19,26 +19,24 @@
 		<div id="message" class="error">${message}</div>	
 		</c:if>
 	</div>
-<TABLE>
-	<TBODY>
-			<tr><td>
-			<fieldset>
-		  		<legend>Search criteria</legend>
-		  		Company
-		  		<input type="text" name="company" />
-		  		Contact person
-		  		<input type="text" name="contactPerson" />
-		  	</fieldset>	
-			</td></tr>
+<fieldset>
+<legend>Search criteria</legend>
+	<TABLE>
+		<TBODY>
+		  	<tr><th>Company</th></tr>
+		  	<tr><td><input type="text" name="company" /></td></tr>
+		  	<tr><th>Contact person</th></tr>
+		  	<tr><th><input type="text" name="contactPerson"/></th></tr>
+		  		
 			<tr> 
-			<td><INPUT type="submit" name="submit" value="Search customer"></td>
-			<td><a href="<c:url value="/Secure/MainMenu" />">Return to main menu</a></td>
-			</tr>
-			
-	</TBODY>
-</TABLE>
+			<td><INPUT type="submit" name="submit" value="Search customer" class="myButton"></td>
+			</tr>	
+		</TBODY>
+	</TABLE>
+</fieldset>
 </form:form>
 </div>
+<a href="<c:url value="/Secure/MainMenu" />" class="myButtonLink">Return to main menu</a>
 
 </body>
 </html>

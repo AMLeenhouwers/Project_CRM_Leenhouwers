@@ -75,34 +75,8 @@ public class NotesManagement {
 			// id is geen getal? error 404
 			return null;
 		}	
-	//	Customer customer = CustomerDoa.findCustomer(key);
-	//	customer.getNotes().add(note);
 		CustomerDoa.addNote(key, note);
 		return "NewNoteAdded";
 	}
-	
-	
-//	@RequestMapping(value="/Secure/Notes/{customerId}/{noteId}", method=RequestMethod.GET)
-//	public String displayNote(@PathVariable String customerId, Model model){
-//		Long key;
-//		try{
-//			key = Long.valueOf(Id);
-//		}
-//		catch(NumberFormatException e){
-//			// id is geen getal? error 404
-//			return null;
-//		}
-//		Customer customer = CustomerDoa.findCustomer(key);
-//		if(customer == null){
-//			return null;
-//		} else {
-//			model.addAttribute("customer", customer);
-//			return "DisplayNotes";
-//		}
-//		
-//	}
-	
-	
-	
 	
 }

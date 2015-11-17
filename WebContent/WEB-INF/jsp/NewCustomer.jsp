@@ -32,6 +32,11 @@
 		 		</form:label>
 		  		<form:input path="contactPerson" />
 		  		
+		  		<form:label path="birthday">
+		  			Birthday (dd/mm/yyyy) <form:errors path="birthday" cssClass="error" />
+		 		</form:label>
+		  		<form:input path="birthday" />
+		  		
 		  		<form:label path="phoneNumber">
 		  			Phone number <form:errors path="phoneNumber" cssClass="error" />
 		 		</form:label>
@@ -56,8 +61,6 @@
 		  	</fieldset>
 		  </td>
 		  <td>
-		  	<fieldset>	
-		  	<legend>Adress Information</legend>
 		  		<fieldset>
 		  		<legend>Company adress</legend>
 		  		<form:label path="adress.firstLine">
@@ -79,8 +82,8 @@
 		  			Country <form:errors path="adress.country" cssClass="error" />
 		 		</form:label>
 		  		<form:input path="adress.country" />
-		  		</fieldset>
-		  		<fieldset>
+		  		</fieldset></td>
+		  		<td><fieldset>
 		  		<legend>Billing adress</legend>
 		  		<form:label path="billingAdress.firstLine">
 		  			First adress line <form:errors path="billingAdress.firstLine" cssClass="error" />
@@ -102,7 +105,6 @@
 		 		</form:label>
 		  		<form:input path="billingAdress.country" />
 		  		</fieldset>
-		  		</fieldset>
 		  </td>
 		  </tr>
 		  <tr><td> <input type="submit" name="submit" value="Create customer" class="myButton"></td></tr>
@@ -110,7 +112,7 @@
 		  	</form:form>
 		  	</div>
 		  	
-		  	<a href="<c:url value="/Secure/MainMenu"/>" class="myButtonLink">Main menu</a>
+		  	<a href="<c:url value="/Secure/MainMenu"/>" class="myButtonLink">Return to Main menu</a>
 
 		  	
 <footer>

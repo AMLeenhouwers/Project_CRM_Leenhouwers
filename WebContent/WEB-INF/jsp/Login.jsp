@@ -19,15 +19,15 @@
 	<TABLE>
 	<TBODY>
 		<TR>
-			<TD>Username:</TD>
-			<TD><INPUT type="text" name="name" size="40" maxlength="50" value="${name}"></TD>
+			<th>Username:</th>
+			<TD><INPUT type="text" name="name" size="30" maxlength="30" value="${name}"></TD>
 		</TR>
 		<TR>
-			<TD>Password:</TD>
-			<TD><INPUT type="password" name="password" size="20" maxlength="20"></TD>
+			<th>Password:</th>
+			<TD><INPUT type="password" name="password" size="30" maxlength="30"></TD>
 		</TR>
 		<TR>
-			<TD><INPUT type="submit" name="submit" value="Login"></TD>
+			<TD><INPUT type="submit" name="submit" value="Login" class="myButton"></TD>
 			<TD></TD>
 		</TR>
 	</TBODY>

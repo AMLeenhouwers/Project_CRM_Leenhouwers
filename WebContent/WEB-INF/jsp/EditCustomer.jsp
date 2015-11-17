@@ -100,14 +100,11 @@
 		  		</fieldset>
 		  </td>
 		  </tr>
-		  	<tr><td> <input type="submit" name="submit" value="Apply changes"></td>
-		  	<td><a href="<c:url value="/Secure/RemoveCustomer/${customer.id}" />">Remove customer</a></td>
-		  	<td> <a href="<c:url value="/Secure/MainMenu" />">Main Menu</a></td></tr>
-
-		  	</table>
-		  	
-		  	
+		  	<tr><td> <input type="submit" name="submit" value="Apply changes" class="myButton"></td>
+		</table>
 		  	</form:form>
 		  	</div>
+		  	<c:if test="${user.removePermission}"><a href="<c:url value="/Secure/RemoveCustomer/${customer.id}" />" class="myButtonLink">Remove customer</a></c:if>
+		  	<a href="<c:url value="/Secure/MainMenu" />" class="myButtonLink">Main Menu</a>
 </body>
 </html>
