@@ -78,7 +78,6 @@
 		</TBODY>
 	</table>
 	</form:form>
-	
 <footer>
   <p>Logged in as: ${user.name}</p>
 </footer>

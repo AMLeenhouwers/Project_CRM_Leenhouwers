@@ -29,7 +29,13 @@ public class UserManagement {
 	}
 	
 	@RequestMapping(value="/Secure/UserManagement/NewUser", method=RequestMethod.POST)
-	public String addUser(@ModelAttribute("user") User user){
+	public String addUser(@ModelAttribute("user") User user, Model model){
+/*		if(UserDoa.findUserByName(user.getName()).equals(user.getName())) {
+			String message = "Username already exists, please try a different username";
+			model.addAttribute("message", message);
+			return "newUser";
+		}*/
+		
 		UserDoa.addUser(user);
 		return "NewUserAdded";
 	}

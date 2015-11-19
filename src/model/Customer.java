@@ -1,5 +1,7 @@
 package model;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -24,13 +26,19 @@ public class Customer {
 	private String contactPerson;
 	private Adress adress;
 	private Adress billingAdress;
+	@Pattern(regexp="([0-9]|\\W)*", message="Number contains alphabetic characters!")
 	private String phoneNumber;
+	@Pattern(regexp="([0-9]|\\W)*", message="Number contains alphabetic characters!")
 	private String mobileNumber;
+	@Pattern(regexp="([0-9]|\\W)*", message="Number contains alphabetic characters!")
 	private String faxNumber;
 	@Pattern(regexp=".+@.+\\..+", message="Wrong email!")
 	private String email;
-	@DateTimeFormat(pattern = "dd/MM/yyyy")
-//	@Pattern(regexp= "[0-3][1-9]-[0-1][1-2]-[0-9]{4}", message="Not in format dd/mm/yyy!")
+	@Pattern(regexp="www\\..*\\.\\w*", message="This is not a valid website")
+	private String website;
+	@Pattern(regexp= "[0-3][0-9]-[0-1][0-2]-[0-9]{4}", message="Not in format dd-mm-yyyy!")
+	private String bday;
+	@DateTimeFormat(pattern = "dd-MM-yyyy")
 	private Date birthday;
 	private List<Note> notes;
 
@@ -139,12 +147,42 @@ public class Customer {
 
 
 	public Date getBirthday() {
+		try{
+		    setBirthday(parseDate(getBday(),"dd-MM-yyyy"));
+		}
+		catch(ParseException e){}
 		return birthday;
 	}
 
 
 	public void setBirthday(Date birthday) {
 		this.birthday = birthday;
+	}
+
+
+	public String getBday() {
+		return bday;
+	}
+
+
+	public void setBday(String bday) {
+		this.bday = bday;
+	}
+	
+	private Date parseDate(String date, String format) throws ParseException
+	{
+	    SimpleDateFormat formatter = new SimpleDateFormat(format);
+	    return formatter.parse(date);
+	}
+
+
+	public String getWebsite() {
+		return website;
+	}
+
+
+	public void setWebsite(String website) {
+		this.website = website;
 	}
 	
 	

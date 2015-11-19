@@ -17,6 +17,8 @@
 		</p>
 		
  <form:form id="form" method="post" commandName="customer" cssClass="cleanform">
+		  <fieldset>
+		  <legend>Customer Details</legend>
 		  <table>
 		  <tr>
 		  <td> 
@@ -32,11 +34,18 @@
 		 		</form:label>
 		  		<form:input path="contactPerson" />
 		  		
-		  		<form:label path="birthday">
-		  			Birthday (dd/mm/yyyy) <form:errors path="birthday" cssClass="error" />
+		  		<form:label path="bday">
+		  			Birthday (dd-mm-yyyy) <form:errors path="bday" cssClass="error" />
 		 		</form:label>
-		  		<form:input path="birthday" />
+		  		<form:input path="bday"/>
 		  		
+		  		<form:label path="website">
+		  			Website <form:errors path="website" cssClass="error" />
+		 		</form:label>
+		  		<form:input path="website" />
+		  		</fieldset></td><td>
+		  		<fieldset>
+		  		<legend>Contact Info</legend>
 		  		<form:label path="phoneNumber">
 		  			Phone number <form:errors path="phoneNumber" cssClass="error" />
 		 		</form:label>
@@ -57,7 +66,7 @@
 		  			Email <form:errors path="email" cssClass="error" />
 		 		</form:label>
 		  		<form:input path="email" />
-		  		
+		  				  		
 		  	</fieldset>
 		  </td>
 		  <td>
@@ -82,8 +91,8 @@
 		  			Country <form:errors path="adress.country" cssClass="error" />
 		 		</form:label>
 		  		<form:input path="adress.country" />
-		  		</fieldset></td>
-		  		<td><fieldset>
+		  		</fieldset></td><td>
+		  		<fieldset>
 		  		<legend>Billing adress</legend>
 		  		<form:label path="billingAdress.firstLine">
 		  			First adress line <form:errors path="billingAdress.firstLine" cssClass="error" />
@@ -109,6 +118,7 @@
 		  </tr>
 		  <tr><td> <input type="submit" name="submit" value="Create customer" class="myButton"></td></tr>
 		  	</table>
+		  	</fieldset>
 		  	</form:form>
 		  	</div>
 		  	

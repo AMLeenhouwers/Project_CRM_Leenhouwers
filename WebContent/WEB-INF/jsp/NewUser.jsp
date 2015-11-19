@@ -12,6 +12,10 @@
 <H1>CRM</H1>
 <div id="formsContent">
 <h2>Please enter user details</h2>
+<c:if test="${not empty message}">
+	<div id="message" class="error">${message}</div>	
+</c:if>
+
 <form:form id="form" method="post" cssClass="cleanform" commandName="newUser">
 <TABLE>
 	<TBODY>

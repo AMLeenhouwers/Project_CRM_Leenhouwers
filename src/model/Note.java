@@ -12,7 +12,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 @Entity
 public class Note {
 	private Long id;
-	@DateTimeFormat(pattern = "dd/MM/yyyy")
+	@DateTimeFormat(pattern = "dd-MM-yyyy")
 	private Date date;
 	private String message;
 	private String userName;

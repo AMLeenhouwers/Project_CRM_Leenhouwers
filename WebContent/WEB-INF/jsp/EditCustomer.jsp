@@ -4,14 +4,16 @@
 <html>
 <head>
 <meta charset="UTF-8">	
-<title>New Customer</title>
+<title>Edit Customer</title>
 <link href="<c:url value="/resources/form.css" />" rel="stylesheet"  type="text/css" />	
 </head>
 <body>
 <h1>CRM</h1>
 	<div id="formsContent">
-		<h2>Edit Customer</h2>
- <form:form id="form" commandName="customer" cssClass="cleanform" method="post">
+		<h2>Edit customer details</h2>
+ <form:form id="form" method="post" commandName="customer" cssClass="cleanform">
+		  <fieldset>
+		  <legend>Customer Details</legend>
 		  <table>
 		  <tr>
 		  <td> 
@@ -27,6 +29,18 @@
 		 		</form:label>
 		  		<form:input path="contactPerson" />
 		  		
+		  		<form:label path="bday">
+		  			Birthday (dd-mm-yyyy) <form:errors path="bday" cssClass="error" />
+		 		</form:label>
+		  		<form:input path="bday"/>
+		  		
+		  		<form:label path="website">
+		  			Website <form:errors path="website" cssClass="error" />
+		 		</form:label>
+		  		<form:input path="website" />
+		  		</fieldset></td><td>
+		  		<fieldset>
+		  		<legend>Contact Info</legend>
 		  		<form:label path="phoneNumber">
 		  			Phone number <form:errors path="phoneNumber" cssClass="error" />
 		 		</form:label>
@@ -47,12 +61,10 @@
 		  			Email <form:errors path="email" cssClass="error" />
 		 		</form:label>
 		  		<form:input path="email" />
-		  		
+		  				  		
 		  	</fieldset>
 		  </td>
 		  <td>
-		  	<fieldset>	
-		  	<legend>Adress Information</legend>
 		  		<fieldset>
 		  		<legend>Company adress</legend>
 		  		<form:label path="adress.firstLine">
@@ -74,7 +86,7 @@
 		  			Country <form:errors path="adress.country" cssClass="error" />
 		 		</form:label>
 		  		<form:input path="adress.country" />
-		  		</fieldset>
+		  		</fieldset></td><td>
 		  		<fieldset>
 		  		<legend>Billing adress</legend>
 		  		<form:label path="billingAdress.firstLine">
@@ -97,14 +109,14 @@
 		 		</form:label>
 		  		<form:input path="billingAdress.country" />
 		  		</fieldset>
-		  		</fieldset>
 		  </td>
 		  </tr>
-		  	<tr><td> <input type="submit" name="submit" value="Apply changes" class="myButton"></td>
-		</table>
-		  	</form:form>
-		  	</div>
+		  <tr><td> <input type="submit" name="submit" value="Apply changes" class="myButton"></td></tr>
+		  	</table>
 		  	<c:if test="${user.removePermission}"><a href="<c:url value="/Secure/RemoveCustomer/${customer.id}" />" class="myButtonLink">Remove customer</a></c:if>
-		  	<a href="<c:url value="/Secure/MainMenu" />" class="myButtonLink">Main Menu</a>
+		  	</fieldset>
+		  	</form:form>
+		  	</div>		  	
+		  	<a href="<c:url value="/Secure/MainMenu" />" class="myButtonLink">Return to main menu</a>
 </body>
 </html>
