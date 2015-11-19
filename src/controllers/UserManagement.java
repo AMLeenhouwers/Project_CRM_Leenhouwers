@@ -1,14 +1,15 @@
 package controllers;
 
+import javax.validation.Valid;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import model.Customer;
-import model.CustomerDoa;
 import model.User;
 import model.UserDoa;
 
@@ -24,18 +25,20 @@ public class UserManagement {
 	@RequestMapping(value="/Secure/UserManagement/NewUser", method=RequestMethod.GET)
 	public String UserForm(Model model){
 		User user = new User();
-		model.addAttribute("newUser", user);
+		model.addAttribute("user", user);
 		return "NewUser";
 	}
 	
 	@RequestMapping(value="/Secure/UserManagement/NewUser", method=RequestMethod.POST)
-	public String addUser(@ModelAttribute("user") User user, Model model){
+	public String addUser(@Valid @ModelAttribute("user") User user, BindingResult result, Model model){
 /*		if(UserDoa.findUserByName(user.getName()).equals(user.getName())) {
 			String message = "Username already exists, please try a different username";
 			model.addAttribute("message", message);
 			return "newUser";
 		}*/
-		
+        if(result.hasErrors()) {
+            return "NewUser";
+        }
 		UserDoa.addUser(user);
 		return "NewUserAdded";
 	}

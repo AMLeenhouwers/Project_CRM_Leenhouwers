@@ -18,12 +18,6 @@
 		  <c:forEach items="${customers3}" var="customer"> 
 		  <td>
 		  	<fieldset>
-		  	<legend>Customer Info</legend>
-
-		  	</fieldset>
-		  </td>
-<%-- 		  <td>
-		  	<fieldset>
 		  		<legend>Customer Info</legend>
 		  		Company: ${customer.company} <br>
 		  		Contact person: ${customer.contactPerson} <br>
@@ -32,10 +26,11 @@
 		  		Fax number: ${customer.faxNumber} <br>
 		  		Email: ${customer.email} <br>		  		
 			<a href="<c:url value="/Secure/Notes/${customer.id}" />" class="myButton">Notes</a>
-		  	</fieldset>
+		  	
 			<c:if test="${user.editPermission}"><a href="<c:url value="/Secure/EditCustomer/${customer.id}" />" class="myButton">Edit customer</a></c:if>
 		  	<c:if test="${user.removePermission}"><a href="<c:url value="/Secure/RemoveCustomer/${customer.id}" />" class="myButton">Remove customer</a></c:if>
-		  </td> --%>
+		  	</fieldset>
+		  </td> 
 		  </c:forEach>
 		  </tr>
 		  	</c:forEach>
@@ -43,5 +38,9 @@
 		  	</form:form>
 		  	</div>
 		  	<a href="<c:url value="/Secure/MainMenu" />" class="myButtonLink">Return to main menu</a>
+<footer>
+  <p>Logged in as: ${sessionScope.user.name}</p>
+</footer>
+		  	
 </body>
 </html>

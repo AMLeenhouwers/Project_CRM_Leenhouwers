@@ -15,8 +15,8 @@
 	<p><a href="<c:url value="/Secure/MainMenu"/>" class="myButtonLink">Return to main menu</a></p>
 
 <footer>
-  <p>Logged in as: ${user.name}</p>
-</footer>	
+  <p>Logged in as: ${sessionScope.user.name}</p>
+</footer>
 	
 </body>
 </html>

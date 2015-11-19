@@ -43,5 +43,9 @@
 		  </div>
 		  	<a href="<c:url value="/Secure/Notes/${customer.id}/AddNote"/>" class="myButtonLink">Add a new note</a>
 		  	<a href="<c:url value="/Secure/MainMenu"/>" class="myButtonLink">Return to main menu</a>
+		  	
+<footer>
+  <p>Logged in as: ${sessionScope.user.name}</p>
+</footer>
 </body>
 </html>

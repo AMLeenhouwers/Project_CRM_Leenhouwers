@@ -27,7 +27,7 @@
 	</table>
 	</form:form>
 <footer>
-  <p>Logged in as: ${user.name}</p>
+  <p>Logged in as: ${sessionScope.user.name}</p>
 </footer>
 </body>
 </html>

@@ -37,5 +37,9 @@
 	  	</form:form>
 	  	</div>
 	  	<a href="<c:url value="/Secure/MainMenu" />" class="myButtonLink">Return to main menu</a>
+	  	
+<footer>
+  <p>Logged in as: ${sessionScope.user.name}</p>
+</footer>
 </body>
 </html>

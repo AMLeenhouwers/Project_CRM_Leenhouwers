@@ -16,7 +16,7 @@
 	<div id="message" class="error">${message}</div>	
 </c:if>
 
-<form:form id="form" method="post" cssClass="cleanform" commandName="newUser">
+<form:form id="form" method="post" cssClass="cleanform" commandName="user">
 <TABLE>
 	<TBODY>
 			<tr><td>
@@ -57,5 +57,8 @@
 </form:form>
 </div>
 
+<footer>
+  <p>Logged in as: ${sessionScope.user.name}</p>
+</footer>
 </body>
 </html>

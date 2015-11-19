@@ -53,5 +53,8 @@
 </form:form>
 </div>
 
+<footer>
+  <p>Logged in as: ${sessionScope.user.name}</p>
+</footer>
 </body>
 </html>

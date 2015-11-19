@@ -9,6 +9,8 @@ import org.hibernate.annotations.GenericGenerator;
 @Entity
 public class User {
 	private Long id;
+	
+	@UniqueUser
 	private String name;
 	private String password;
 	private boolean removePermission = false;
